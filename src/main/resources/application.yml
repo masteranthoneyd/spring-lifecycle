@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-lifecycle
+
+logging:
+  level:
+    com.yangbingdong.spring.explore.lifecycle: info
+    root: info
+
+lifecycle:
+  custom:
+    name: Mike
+    age: 18

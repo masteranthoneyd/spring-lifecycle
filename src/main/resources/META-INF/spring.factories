@@ -1,0 +1,10 @@
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.yangbingdong.spring.explore.lifecycle.app.CustomSpringApplicationRunListener
+# Application Listeners
+
+org.springframework.context.ApplicationListener=\
+com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationStartingEventListener,\
+com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationEnvironmentPreparedEventListener,\
+com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationContextInitializedEventListener,\
+com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationPreparedEventListener
