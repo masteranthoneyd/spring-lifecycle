@@ -16,6 +16,7 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        LogUtil.infoWithStacktrace(log, "CustomBeanFactoryPostProcessor.BeanFactoryPostProcessor#postProcessBeanFactory");
+        LogUtil.log("对 BeanFactory 进行处理, 比如处理 @Value 中的 ${...} 占位符, 参考 PropertySourcesPlaceholderConfigurer",
+                "BeanFactoryPostProcessor", "postProcessBeanFactory");
     }
 }

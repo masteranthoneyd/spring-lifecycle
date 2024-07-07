@@ -1,10 +1,13 @@
 spring:
+  threads:
+    virtual:
+      enabled: true
   application:
     name: spring-lifecycle
 
 logging:
   level:
-    com.yangbingdong.spring.explore.lifecycle: info
+    com.yangbingdong.spring.explore.lifecycle.autoconfigure: trace
     root: info
 
 lifecycle:

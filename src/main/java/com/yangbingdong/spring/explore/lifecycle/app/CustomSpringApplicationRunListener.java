@@ -17,12 +17,12 @@ public class CustomSpringApplicationRunListener implements SpringApplicationRunL
 
     @Override
     public void starting(ConfigurableBootstrapContext bootstrapContext) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#starting");
+        System.out.println("SpringApplicationRunListener#starting");
     }
 
     @Override
     public void environmentPrepared(ConfigurableBootstrapContext bootstrapContext, ConfigurableEnvironment environment) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#environmentPrepared");
+        System.out.println("SpringApplicationRunListener#environmentPrepared");
     }
 
     @Override
