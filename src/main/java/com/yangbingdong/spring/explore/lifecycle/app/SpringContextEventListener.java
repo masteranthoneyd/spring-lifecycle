@@ -1,6 +1,5 @@
 package com.yangbingdong.spring.explore.lifecycle.app;
 
-import com.yangbingdong.spring.explore.lifecycle.LogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -18,21 +17,21 @@ public class SpringContextEventListener {
 
     @EventListener
     public void handleContextStartedEvent(ContextStartedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ContextStartedEvent]...");
+        System.out.println("\n======================> ApplicationContextEvent 事件监听: ContextStartedEvent\n");
     }
 
     @EventListener
     public void handleContextRefreshedEvent(ContextRefreshedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ContextRefreshedEvent]...");
+        System.out.println("\n======================> ApplicationContextEvent 事件监听: ContextRefreshedEvent\n");
     }
 
     @EventListener
     public void handleContextClosedEvent(ContextClosedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ContextClosedEvent]...");
+        System.out.println("\n======================> ApplicationContextEvent 事件监听: ContextClosedEvent\n");
     }
 
     @EventListener
     public void handleContextStoppedEvent(ContextStoppedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ContextStoppedEvent]...");
+        System.out.println("\n======================> ApplicationContextEvent 事件监听: ContextStoppedEvent\n");
     }
 }

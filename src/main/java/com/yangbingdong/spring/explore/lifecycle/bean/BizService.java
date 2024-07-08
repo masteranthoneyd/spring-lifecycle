@@ -31,50 +31,50 @@ public class BizService implements
     }
 
     public BizService() {
-        LogUtil.infoWithStacktrace(log, "BizService#constructor");
+        System.out.println("######################## BizService 构造器 ########################\n");
     }
 
     @Autowired
     public void setThirdPartAbility(ThirdPartAbility thirdPartAbility) {
-        LogUtil.infoWithStacktrace(log, "BizService.@Autowired#setThirdPartAbility");
+        System.out.println("######################## BizService#setThirdPartAbility 依赖注入 ########################\n");
         this.thirdPartAbility = thirdPartAbility;
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        LogUtil.infoWithStacktrace(log, "BizService.ApplicationContextAware#setApplicationContext");
+        LogUtil.log("拿到 ApplicationContext", "ApplicationContextAware", "setApplicationContext");
     }
 
     @PostConstruct
     public void postConstruct() {
-        LogUtil.infoWithStacktrace(log, "BizService#@PostConstruct");
+        LogUtil.log("bean初始化 @PostConstruct", "@PostConstruct", "@PostConstruct");
     }
 
     @Override
     public void afterPropertiesSet() {
-        LogUtil.infoWithStacktrace(log, "BizService.InitializingBean#afterPropertiesSet");
+        LogUtil.log("bean初始化 afterPropertiesSet", "InitializingBean", "afterPropertiesSet");
     }
 
     public void initMethod() {
-        LogUtil.infoWithStacktrace(log, "BizService#initMethod");
+        LogUtil.log("bean初始化 initMethod", "@Bean", "initMethod");
     }
 
     @Override
     public void afterSingletonsInstantiated() {
-        LogUtil.infoWithStacktrace(log, "BizService.SmartInitializingSingleton#afterSingletonsInstantiated");
+        LogUtil.log("bean初始化 afterSingletonsInstantiated", "SmartInitializingSingleton", "afterSingletonsInstantiated");
     }
 
     @PreDestroy
     public void close() {
-        LogUtil.infoWithStacktrace(log, "BizService.@PreDestroy#close");
+        LogUtil.log("bean销毁 destroy", "@PreDestroy", "@PreDestroy");
     }
 
     @Override
     public void destroy() throws Exception {
-        LogUtil.infoWithStacktrace(log, "BizService.DisposableBean#destroy");
+        LogUtil.log("bean销毁 destroy", "DisposableBean", "destroy");
     }
 
     public void destroyMethod() {
-        LogUtil.infoWithStacktrace(log, "BizService#destroyMethod");
+        LogUtil.log("bean销毁 destroyMethod", "@Bean", "destroyMethod");
     }
 }

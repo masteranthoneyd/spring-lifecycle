@@ -1,6 +1,5 @@
 package com.yangbingdong.spring.explore.lifecycle.autoconfigure;
 
-import com.yangbingdong.spring.explore.lifecycle.LogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -15,16 +14,13 @@ public class CustomProperties {
 
     private Integer age;
 
-    public CustomProperties() {
-        LogUtil.infoWithStacktrace(log, "CustomProperties.constructor");
-    }
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        LogUtil.infoWithStacktrace(log, "CustomProperties.setName");
+        System.out.println("######################## CustomProperties#setName ########################\n");
         this.name = name;
     }
 
@@ -33,7 +29,6 @@ public class CustomProperties {
     }
 
     public void setAge(Integer age) {
-        LogUtil.infoWithStacktrace(log, "CustomProperties.setAge");
         this.age = age;
     }
 }

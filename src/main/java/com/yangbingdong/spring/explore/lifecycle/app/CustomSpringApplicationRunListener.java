@@ -17,36 +17,36 @@ public class CustomSpringApplicationRunListener implements SpringApplicationRunL
 
     @Override
     public void starting(ConfigurableBootstrapContext bootstrapContext) {
-        System.out.println("SpringApplicationRunListener#starting");
+        LogUtil.log("Application 启动中", "SpringApplicationRunListener", "starting");
     }
 
     @Override
     public void environmentPrepared(ConfigurableBootstrapContext bootstrapContext, ConfigurableEnvironment environment) {
-        System.out.println("SpringApplicationRunListener#environmentPrepared");
+        LogUtil.log("Application 环境变量已准备好", "SpringApplicationRunListener", "environmentPrepared");
     }
 
     @Override
     public void contextPrepared(ConfigurableApplicationContext context) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#contextPrepared");
+        LogUtil.log("ApplicationContext 已准备好", "SpringApplicationRunListener", "contextPrepared");
     }
 
     @Override
     public void contextLoaded(ConfigurableApplicationContext context) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#contextLoaded");
+        LogUtil.log("ApplicationContext 已加载", "SpringApplicationRunListener", "contextLoaded");
     }
 
     @Override
     public void started(ConfigurableApplicationContext context, Duration timeTaken) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#started");
+        LogUtil.log("Application 已启动", "SpringApplicationRunListener", "started");
     }
 
     @Override
     public void ready(ConfigurableApplicationContext context, Duration timeTaken) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#ready");
+        LogUtil.log("Application 已就绪", "SpringApplicationRunListener", "ready");
     }
 
     @Override
     public void failed(ConfigurableApplicationContext context, Throwable exception) {
-        LogUtil.infoWithStacktrace(log, "SpringApplicationRunListener#failed");
+        LogUtil.log("Application 启动失败", "SpringApplicationRunListener", "failed");
     }
 }

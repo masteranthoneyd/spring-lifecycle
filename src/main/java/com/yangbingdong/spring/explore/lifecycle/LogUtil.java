@@ -10,8 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 @UtilityClass
 public class LogUtil {
 
-    public static void log(String expansionPoint, String method, String message) {
-        System.out.printf("-----------------------[%s]  扩展点演示 %s 开始--------------------------------------", expansionPoint, method);
+    public static void log(String message, String expansionPoint, String method) {
+        System.out.printf("\n-----------------------[%s]  扩展点演示 %s 开始--------------------------------------\n", expansionPoint, method);
         System.out.println(message);
         System.out.printf("-----------------------[%s]  扩展点演示 %s 结束--------------------------------------\n", expansionPoint, method);
     }

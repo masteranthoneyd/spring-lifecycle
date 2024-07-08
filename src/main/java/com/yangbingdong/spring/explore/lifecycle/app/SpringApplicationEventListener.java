@@ -1,6 +1,5 @@
 package com.yangbingdong.spring.explore.lifecycle.app;
 
-import com.yangbingdong.spring.explore.lifecycle.LogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationContextInitializedEvent;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
@@ -25,68 +24,47 @@ public class SpringApplicationEventListener {
 
         @Override
         public void onApplicationEvent(ApplicationStartingEvent event) {
-            // log component is not loaded
-            System.out.println("[ApplicationStartingEventListener.ApplicationStartingEvent]...");
+            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationStartingEvent\n");
         }
-    }
-
-    @EventListener
-    public void handleApplicationStartingEvent(ApplicationStartingEvent event) {
-        System.out.println("[ApplicationStartingEvent]...");
     }
 
     public static class ApplicationEnvironmentPreparedEventListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
         @Override
         public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
-            // log component is not loaded
-            System.out.println("[ApplicationEnvironmentPreparedEventListener.ApplicationEnvironmentPreparedEvent]...");
+            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationEnvironmentPreparedEvent\n");
         }
-    }
-
-    @EventListener
-    public void handleApplicationEnvironmentPreparedEvent(ApplicationEnvironmentPreparedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ApplicationEnvironmentPreparedEvent]...");
     }
 
     public static class ApplicationContextInitializedEventListener implements ApplicationListener<ApplicationContextInitializedEvent> {
 
         @Override
         public void onApplicationEvent(ApplicationContextInitializedEvent event) {
-            LogUtil.infoWithStacktrace(log, "[ApplicationEnvironmentPreparedEventListener.ApplicationContextInitializedEvent]...");
+            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationContextInitializedEvent\n");
         }
     }
 
-    @EventListener
-    public void handleApplicationContextInitializedEvent(ApplicationContextInitializedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ApplicationContextInitializedEvent]...");
-    }
 
     public static class ApplicationPreparedEventListener implements ApplicationListener<ApplicationPreparedEvent> {
 
         @Override
         public void onApplicationEvent(ApplicationPreparedEvent event) {
-            LogUtil.infoWithStacktrace(log, "[ApplicationEnvironmentPreparedEventListener.ApplicationPreparedEvent]...");
+            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationPreparedEvent\n");
         }
     }
 
     @EventListener
-    public void handleApplicationPreparedEvent(ApplicationPreparedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ApplicationPreparedEvent]...");
-    }
-
-    @EventListener
     public void handleServletWebServerInitializedEvent(ServletWebServerInitializedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ServletWebServerInitializedEvent]...");
+        System.out.println("\n======================> ApplicationEvent 事件监听: ServletWebServerInitializedEvent\n");
     }
 
     @EventListener
     public void handleApplicationStartedEvent(ApplicationStartedEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ApplicationStartedEvent]...");
+        System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationStartedEvent\n");
     }
 
     @EventListener
     public void handleApplicationReadyEvent(ApplicationReadyEvent event) {
-        LogUtil.infoWithStacktrace(log, "[ApplicationReadyEvent]...");
+        System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationReadyEvent\n");
     }
 }

@@ -12,20 +12,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomSmartLifecycle implements
         SmartLifecycle
-//        , Lifecycle
 {
 
     private volatile boolean running;
 
     @Override
     public void start() {
-        LogUtil.infoWithStacktrace(log, "CustomSmartLifecycle.SmartLifecycle#start");
+        LogUtil.log("SmartLifecycle 启动, 可以开启流量", "SmartLifecycle", "start");
         running = true;
     }
 
     @Override
     public void stop() {
-        LogUtil.infoWithStacktrace(log, "CustomSmartLifecycle.SmartLifecycle#stop");
+        LogUtil.log("SmartLifecycle 关闭, 可以关闭流量入口", "SmartLifecycle", "stop");
         running = false;
     }
 
