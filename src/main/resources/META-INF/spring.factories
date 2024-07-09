@@ -12,3 +12,7 @@ com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.App
 com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationEnvironmentPreparedEventListener,\
 com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationContextInitializedEventListener,\
 com.yangbingdong.spring.explore.lifecycle.app.SpringApplicationEventListener.ApplicationPreparedEventListener
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.yangbingdong.spring.explore.lifecycle.app.CustomEnvironmentPostProcessor
