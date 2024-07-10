@@ -1,5 +1,6 @@
 package com.yangbingdong.spring.explore.lifecycle.app;
 
+import com.yangbingdong.spring.explore.lifecycle.LogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationContextInitializedEvent;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
@@ -24,7 +25,7 @@ public class SpringApplicationEventListener {
 
         @Override
         public void onApplicationEvent(ApplicationStartingEvent event) {
-            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationStartingEvent\n");
+            LogUtil.logSpringApplicationEvent("ApplicationStartingEvent");
         }
     }
 
@@ -32,7 +33,7 @@ public class SpringApplicationEventListener {
 
         @Override
         public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
-            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationEnvironmentPreparedEvent\n");
+            LogUtil.logSpringApplicationEvent("ApplicationEnvironmentPreparedEvent");
         }
     }
 
@@ -40,7 +41,7 @@ public class SpringApplicationEventListener {
 
         @Override
         public void onApplicationEvent(ApplicationContextInitializedEvent event) {
-            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationContextInitializedEvent\n");
+            LogUtil.logSpringApplicationEvent("ApplicationContextInitializedEvent");
         }
     }
 
@@ -49,22 +50,22 @@ public class SpringApplicationEventListener {
 
         @Override
         public void onApplicationEvent(ApplicationPreparedEvent event) {
-            System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationPreparedEvent\n");
+            LogUtil.logSpringApplicationEvent("ApplicationPreparedEvent");
         }
     }
 
     @EventListener
     public void handleServletWebServerInitializedEvent(ServletWebServerInitializedEvent event) {
-        System.out.println("\n======================> ApplicationEvent 事件监听: ServletWebServerInitializedEvent\n");
+        LogUtil.logSpringApplicationEvent("ServletWebServerInitializedEvent");
     }
 
     @EventListener
     public void handleApplicationStartedEvent(ApplicationStartedEvent event) {
-        System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationStartedEvent\n");
+        LogUtil.logSpringApplicationEvent("ApplicationStartedEvent");
     }
 
     @EventListener
     public void handleApplicationReadyEvent(ApplicationReadyEvent event) {
-        System.out.println("\n======================> SpringApplicationEvent 事件监听: ApplicationReadyEvent\n");
+        LogUtil.logSpringApplicationEvent("ApplicationReadyEvent");
     }
 }

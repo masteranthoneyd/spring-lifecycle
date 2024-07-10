@@ -19,9 +19,6 @@ import static com.yangbingdong.spring.explore.lifecycle.bean.CustomBeanUtil.isBi
 public class CustomBeanPostProcessor implements
         InstantiationAwareBeanPostProcessor,
         PriorityOrdered {
-
-    private BizService bizService;
-
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
@@ -54,7 +51,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean构造之后", "InstantiationAwareBeanPostProcessor", "postProcessAfterInitialization");
+            LogUtil.log("Bean构造之后", "InstantiationAwareBeanPostProcessor", "postProcessAfterInstantiation");
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessAfterInstantiation(bean, beanName);
     }
@@ -66,10 +63,4 @@ public class CustomBeanPostProcessor implements
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);
     }
-
-    /*    @Autowired
-    public void setBizService(BizService bizService) {
-        this.bizService = bizService;
-    }*/
-
 }

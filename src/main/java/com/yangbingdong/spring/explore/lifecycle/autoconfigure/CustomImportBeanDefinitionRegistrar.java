@@ -1,0 +1,23 @@
+package com.yangbingdong.spring.explore.lifecycle.autoconfigure;
+
+import com.yangbingdong.spring.explore.lifecycle.LogUtil;
+import com.yangbingdong.spring.explore.lifecycle.bean.ThirdPartAbility;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.BeanNameGenerator;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
+import org.springframework.core.type.AnnotationMetadata;
+
+/**
+ * @author bingdong.yang@salesforce-china.com
+ */
+public class CustomImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+
+    @Override
+    public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
+        LogUtil.log("结合注解以及 BeanDefinitionRegistry 动态注册 bean",
+                "ImportBeanDefinitionRegistrar", "registerBeanDefinitions");
+        RootBeanDefinition beanDefinition = new RootBeanDefinition(ThirdPartAbility.class);
+        registry.registerBeanDefinition(importBeanNameGenerator.generateBeanName(beanDefinition, registry), beanDefinition);
+    }
+}
