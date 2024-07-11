@@ -4,7 +4,6 @@ import com.yangbingdong.spring.explore.lifecycle.LogUtil;
 import com.yangbingdong.spring.explore.lifecycle.bean.BizService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
@@ -24,8 +23,8 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
                 "BeanFactoryPostProcessor", "postProcessBeanFactory");
     }
 
-    @Autowired
+    /*@Autowired
     public void setBizService(BizService bizService) {
         this.bizService = bizService;
-    }
+    }*/
 }
