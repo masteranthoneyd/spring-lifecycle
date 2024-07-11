@@ -17,36 +17,36 @@ public class CustomSpringApplicationRunListener implements SpringApplicationRunL
 
     @Override
     public void starting(ConfigurableBootstrapContext bootstrapContext) {
-        LogUtil.log("Application 启动中", "SpringApplicationRunListener", "starting");
+        LogUtil.log("Application starting", "SpringApplicationRunListener", "starting");
     }
 
     @Override
     public void environmentPrepared(ConfigurableBootstrapContext bootstrapContext, ConfigurableEnvironment environment) {
-        LogUtil.log("Application 环境变量已准备好", "SpringApplicationRunListener", "environmentPrepared");
+        LogUtil.log("Application environmentPrepared", "SpringApplicationRunListener", "environmentPrepared");
     }
 
     @Override
     public void contextPrepared(ConfigurableApplicationContext context) {
-        LogUtil.log("ApplicationContext 已准备好", "SpringApplicationRunListener", "contextPrepared");
+        LogUtil.log("ApplicationContext contextPrepared", "SpringApplicationRunListener", "contextPrepared");
     }
 
     @Override
     public void contextLoaded(ConfigurableApplicationContext context) {
-        LogUtil.log("ApplicationContext 已加载", "SpringApplicationRunListener", "contextLoaded");
+        LogUtil.log("ApplicationContext contextLoaded", "SpringApplicationRunListener", "contextLoaded");
     }
 
     @Override
     public void started(ConfigurableApplicationContext context, Duration timeTaken) {
-        LogUtil.log("Application 已启动", "SpringApplicationRunListener", "started");
+        LogUtil.log("Application started", "SpringApplicationRunListener", "started");
     }
 
     @Override
     public void ready(ConfigurableApplicationContext context, Duration timeTaken) {
-        LogUtil.log("Application 已就绪", "SpringApplicationRunListener", "ready");
+        LogUtil.log("Application ready", "SpringApplicationRunListener", "ready");
     }
 
     @Override
     public void failed(ConfigurableApplicationContext context, Throwable exception) {
-        LogUtil.log("Application 启动失败", "SpringApplicationRunListener", "failed");
+        LogUtil.log("Application failed", "SpringApplicationRunListener", "failed");
     }
 }

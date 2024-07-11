@@ -18,13 +18,13 @@ public class CustomSmartLifecycle implements
 
     @Override
     public void start() {
-        LogUtil.log("SmartLifecycle 启动, 可以开启流量", "SmartLifecycle", "start");
+        LogUtil.log("SmartLifecycle starts, traffic can be enabled", "SmartLifecycle", "start");
         running = true;
     }
 
     @Override
     public void stop() {
-        LogUtil.log("SmartLifecycle 关闭, 可以关闭流量入口", "SmartLifecycle", "stop");
+        LogUtil.log("SmartLifecycle stop, traffic can be disable", "SmartLifecycle", "stop");
         running = false;
     }
 

@@ -20,7 +20,7 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
 
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
-        LogUtil.log("处理环境变量, 比如加载 active profiles, 参考 ConfigDataEnvironmentPostProcessor",
+        LogUtil.log("Processing environment variables, such as loading active profiles, reference ConfigDataEnvironmentPostProcessor",
                 "EnvironmentPostProcessor", "postProcessEnvironment");
         logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 延迟日志 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }

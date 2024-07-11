@@ -15,7 +15,7 @@ public class CustomImportBeanDefinitionRegistrar implements ImportBeanDefinition
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
-        LogUtil.log("结合注解以及 BeanDefinitionRegistry 动态注册 bean",
+        LogUtil.log("Dynamically register beans with annotations and BeanDefinitionRegistry",
                 "ImportBeanDefinitionRegistrar", "registerBeanDefinitions");
         RootBeanDefinition beanDefinition = new RootBeanDefinition(ThirdPartAbility.class);
         registry.registerBeanDefinition(importBeanNameGenerator.generateBeanName(beanDefinition, registry), beanDefinition);

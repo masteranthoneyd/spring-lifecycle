@@ -31,50 +31,50 @@ public class BizService implements
     }
 
     public BizService() {
-        System.out.println("######################## BizService 构造器 ########################\n");
+        System.out.println("######################## BizService Constructor ########################\n");
     }
 
     @Autowired
     public void setThirdPartAbility(ThirdPartAbility thirdPartAbility) {
-        System.out.println("######################## BizService#setThirdPartAbility 依赖注入 ########################\n");
+        System.out.println("######################## BizService#setThirdPartAbility Dependency Injection ########################\n");
         this.thirdPartAbility = thirdPartAbility;
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        LogUtil.log("拿到 ApplicationContext", "ApplicationContextAware", "setApplicationContext");
+        LogUtil.log("Get the ApplicationContext", "ApplicationContextAware", "setApplicationContext");
     }
 
     @PostConstruct
     public void postConstruct() {
-        LogUtil.log("bean初始化 @PostConstruct", "@PostConstruct", "@PostConstruct");
+        LogUtil.log("bean initialization, @PostConstruct", "@PostConstruct", "@PostConstruct");
     }
 
     @Override
     public void afterPropertiesSet() {
-        LogUtil.log("bean初始化 afterPropertiesSet", "InitializingBean", "afterPropertiesSet");
+        LogUtil.log("bean initialization, afterPropertiesSet", "InitializingBean", "afterPropertiesSet");
     }
 
     public void initMethod() {
-        LogUtil.log("bean初始化 initMethod", "@Bean", "initMethod");
+        LogUtil.log("bean initialization, initMethod", "@Bean", "initMethod");
     }
 
     @Override
     public void afterSingletonsInstantiated() {
-        LogUtil.log("bean初始化 afterSingletonsInstantiated", "SmartInitializingSingleton", "afterSingletonsInstantiated");
+        LogUtil.log("bean initialization, afterSingletonsInstantiated", "SmartInitializingSingleton", "afterSingletonsInstantiated");
     }
 
     @PreDestroy
     public void close() {
-        LogUtil.log("bean销毁 destroy", "@PreDestroy", "@PreDestroy");
+        LogUtil.log("bean destruction", "@PreDestroy", "@PreDestroy");
     }
 
     @Override
     public void destroy() throws Exception {
-        LogUtil.log("bean销毁 destroy", "DisposableBean", "destroy");
+        LogUtil.log("bean destruction", "DisposableBean", "destroy");
     }
 
     public void destroyMethod() {
-        LogUtil.log("bean销毁 destroyMethod", "@Bean", "destroyMethod");
+        LogUtil.log("bean destruction", "@Bean", "destroyMethod");
     }
 }

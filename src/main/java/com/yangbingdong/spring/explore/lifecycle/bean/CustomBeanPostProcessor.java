@@ -22,7 +22,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean初始化之前", "BeanPostProcessor", "postProcessBeforeInitialization");
+            LogUtil.log("Before bean initialization", "BeanPostProcessor", "postProcessBeforeInitialization");
         }
         return bean;
     }
@@ -30,7 +30,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean初始化之后", "BeanPostProcessor", "postProcessAfterInitialization");
+            LogUtil.log("After bean initialization", "BeanPostProcessor", "postProcessAfterInitialization");
         }
         return bean;
     }
@@ -43,7 +43,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean构造之前", "InstantiationAwareBeanPostProcessor", "postProcessBeforeInstantiation");
+            LogUtil.log("Before bean construction", "InstantiationAwareBeanPostProcessor", "postProcessBeforeInstantiation");
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessBeforeInstantiation(beanClass, beanName);
     }
@@ -51,7 +51,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean构造之后", "InstantiationAwareBeanPostProcessor", "postProcessAfterInstantiation");
+            LogUtil.log("After bean construction", "InstantiationAwareBeanPostProcessor", "postProcessAfterInstantiation");
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessAfterInstantiation(bean, beanName);
     }
@@ -59,7 +59,7 @@ public class CustomBeanPostProcessor implements
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
         if (isBizBean(beanName)) {
-            LogUtil.log("Bean依赖注入", "InstantiationAwareBeanPostProcessor", "postProcessProperties");
+            LogUtil.log("Bean dependency injection", "InstantiationAwareBeanPostProcessor", "postProcessProperties");
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);
     }

@@ -18,14 +18,14 @@ public class LogUtil {
         int num = counter.incrementAndGet();
         System.out.printf("\n-----------------------[%s]  ExtensionPoint (%d) %s Begin--------------------------------------\n", expansionPoint, num, method);
         System.out.println(message);
-        System.out.printf("-----------------------[%s]  ExtensionPoint (%d) %s End\uD83D\uDD1A--------------------------------------\n", expansionPoint, num, method);
+        System.out.printf("-----------------------[%s]  ExtensionPoint (%d) %s End--------------------------------------\n", expansionPoint, num, method);
     }
 
     public static void logSpringApplicationEvent(String name) {
-        System.out.printf("\n======================> ExtensionPoint (%d)  SpringApplicationEvent Listen: %s\n\n", counter.incrementAndGet(), name);
+        System.out.printf("\n======================> ExtensionPoint (%d) SpringApplicationEvent Listen: %s\n\n", counter.incrementAndGet(), name);
     }
 
     public static void logApplicationContextEvent(String name) {
-        System.out.printf("\n======================> ExtensionPoint (%d) 演示 ApplicationContextEvent Listen: %s\n\n", counter.incrementAndGet(), name);
+        System.out.printf("\n======================> ExtensionPoint (%d) ApplicationContextEvent Listen: %s\n\n", counter.incrementAndGet(), name);
     }
 }

@@ -17,13 +17,13 @@ public class ProjectConfiguration {
     private final CustomProperties customProperties;
 
     public ProjectConfiguration(CustomProperties customProperties) {
-        System.out.println("######################## ProjectConfiguration 构造器 ########################\n");
+        System.out.println("######################## ProjectConfiguration Constructor ########################\n");
         this.customProperties = customProperties;
     }
 
     @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
     public BizService bizService() {
-        System.out.println("######################## ProjectConfiguration.bizService() 构建 BizService ########################\n");
+        System.out.println("######################## ProjectConfiguration.bizService() construct BizService ########################\n");
         return new BizService();
     }
 }

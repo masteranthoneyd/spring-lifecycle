@@ -11,7 +11,7 @@ public class CustomImportSelector implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
-        LogUtil.log("根据返回的字符串注册bean",
+        LogUtil.log("Register the bean according to the returned string",
                 "ImportSelector", "selectImports");
         return new String[0];
     }

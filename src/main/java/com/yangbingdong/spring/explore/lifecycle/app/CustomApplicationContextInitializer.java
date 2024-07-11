@@ -13,6 +13,6 @@ public class CustomApplicationContextInitializer implements ApplicationContextIn
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
-        LogUtil.log("定制 ConfigurableApplicationContext", "ApplicationContextInitializer", "initialize");
+        LogUtil.log("Customize ConfigurableApplicationContext", "ApplicationContextInitializer", "initialize");
     }
 }

@@ -20,7 +20,7 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        LogUtil.log("对 BeanFactory 进行处理, 比如处理 @Value 中的 ${...} 占位符, 参考 PropertySourcesPlaceholderConfigurer",
+        LogUtil.log("Handling the BeanFactory, such as handling ${...} in @Value placeholder, reference PropertySourcesPlaceholderConfigurer",
                 "BeanFactoryPostProcessor", "postProcessBeanFactory");
     }
 

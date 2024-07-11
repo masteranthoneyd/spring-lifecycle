@@ -15,6 +15,6 @@ import org.springframework.stereotype.Component;
 public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        LogUtil.log("可以动态注册bean", "BeanDefinitionRegistryPostProcessor", "postProcessBeanDefinitionRegistry");
+        LogUtil.log("You can register beans dynamically", "BeanDefinitionRegistryPostProcessor", "postProcessBeanDefinitionRegistry");
     }
 }
