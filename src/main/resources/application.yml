@@ -5,6 +5,9 @@ spring:
   application:
     name: spring-lifecycle
 
+server:
+  shutdown: graceful
+
 logging:
   level:
     com.yangbingdong.spring.explore.lifecycle.autoconfigure: trace
