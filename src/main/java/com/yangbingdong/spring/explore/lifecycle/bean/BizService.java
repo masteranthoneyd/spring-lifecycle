@@ -40,6 +40,10 @@ public class BizService implements
         this.thirdPartAbility = thirdPartAbility;
     }
 
+    @Autowired
+    public void setCustomService(CustomFactoryBean.CustomService customService) {
+    }
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         LogUtil.log("Get the ApplicationContext", "ApplicationContextAware", "setApplicationContext");
