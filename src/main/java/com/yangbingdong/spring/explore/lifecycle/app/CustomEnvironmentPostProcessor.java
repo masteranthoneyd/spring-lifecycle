@@ -22,6 +22,6 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
         LogUtil.log("Processing environment variables, such as loading active profiles, reference ConfigDataEnvironmentPostProcessor",
                 "EnvironmentPostProcessor", "postProcessEnvironment");
-        logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 延迟日志 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Delay logging !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 }

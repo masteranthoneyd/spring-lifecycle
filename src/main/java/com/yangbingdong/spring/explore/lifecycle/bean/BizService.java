@@ -21,7 +21,7 @@ public class BizService implements
         InitializingBean,
         SmartInitializingSingleton,
         ApplicationContextAware,
-        DisposableBean {
+        DisposableBean{
 
     private ThirdPartAbility thirdPartAbility;
 
@@ -65,7 +65,7 @@ public class BizService implements
     }
 
     @PreDestroy
-    public void close() {
+    public void preDestroy() {
         LogUtil.log("bean destruction", "@PreDestroy", "@PreDestroy");
     }
 
