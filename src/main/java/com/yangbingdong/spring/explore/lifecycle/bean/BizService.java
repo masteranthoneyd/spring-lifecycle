@@ -26,7 +26,7 @@ public class BizService implements
         InitializingBean,
         SmartInitializingSingleton,
         ApplicationContextAware,
-        DisposableBean {
+        DisposableBean{
 
     private ThirdPartAbility thirdPartAbility;
     private CustomProperties customProperties;
@@ -44,6 +44,10 @@ public class BizService implements
     public void setThirdPartAbility(ThirdPartAbility thirdPartAbility) {
         System.out.println("######################## BizService#setThirdPartAbility Dependency Injection ########################\n");
         this.thirdPartAbility = thirdPartAbility;
+    }
+
+    @Autowired
+    public void setCustomService(CustomFactoryBean.CustomService customService) {
     }
 
     @Override
@@ -72,7 +76,7 @@ public class BizService implements
 
     @SneakyThrows
     @PreDestroy
-    public void close() {
+    public void preDestroy() {
         LogUtil.log("bean destruction", "@PreDestroy", "@PreDestroy");
         if (customProperties.isBlockShutdown()) {
             log.warn("Blocking shutdown...");

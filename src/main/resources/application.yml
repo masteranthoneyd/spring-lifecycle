@@ -4,6 +4,11 @@ spring:
       enabled: true
   application:
     name: spring-lifecycle
+  main:
+    allow-circular-references: true
+  mvc:
+    servlet:
+      load-on-startup: 0
   cloud:
     nacos:
       discovery:

@@ -18,6 +18,4 @@ public class SpringLifecycleApplication {
         ((BizService) context.getBean("bizService")).sayHello();
 //        context.close();
     }
-
-
 }

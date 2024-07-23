@@ -1,10 +1,8 @@
 package com.yangbingdong.spring.explore.lifecycle.autoconfigure;
 
 import com.yangbingdong.spring.explore.lifecycle.LogUtil;
-import com.yangbingdong.spring.explore.lifecycle.bean.ThirdPartAbility;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanNameGenerator;
-import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
@@ -17,7 +15,7 @@ public class CustomImportBeanDefinitionRegistrar implements ImportBeanDefinition
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
         LogUtil.log("Dynamically register beans with annotations and BeanDefinitionRegistry",
                 "ImportBeanDefinitionRegistrar", "registerBeanDefinitions");
-        RootBeanDefinition beanDefinition = new RootBeanDefinition(ThirdPartAbility.class);
-        registry.registerBeanDefinition(importBeanNameGenerator.generateBeanName(beanDefinition, registry), beanDefinition);
+//        RootBeanDefinition beanDefinition = new RootBeanDefinition(ThirdPartAbility.class);
+//        registry.registerBeanDefinition(importBeanNameGenerator.generateBeanName(beanDefinition, registry), beanDefinition);
     }
 }
