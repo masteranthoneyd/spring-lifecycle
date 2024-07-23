@@ -14,6 +14,9 @@ public class CustomProperties {
 
     private Integer age;
 
+    private boolean blockShutdown;
+
+    private boolean gracefulDeregisterNacos;
 
     public String getName() {
         return name;
@@ -30,5 +33,21 @@ public class CustomProperties {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public boolean isBlockShutdown() {
+        return blockShutdown;
+    }
+
+    public void setBlockShutdown(boolean blockShutdown) {
+        this.blockShutdown = blockShutdown;
+    }
+
+    public boolean isGracefulDeregisterNacos() {
+        return gracefulDeregisterNacos;
+    }
+
+    public void setGracefulDeregisterNacos(boolean gracefulDeregisterNacos) {
+        this.gracefulDeregisterNacos = gracefulDeregisterNacos;
     }
 }

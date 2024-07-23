@@ -1,1 +1,2 @@
 com.yangbingdong.spring.explore.lifecycle.autoconfigure.ProjectConfiguration
+com.yangbingdong.spring.explore.lifecycle.autoconfigure.CustomServiceRegistryAutoConfiguration

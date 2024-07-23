@@ -8,7 +8,7 @@ import org.springframework.boot.context.event.ApplicationPreparedEvent;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.boot.context.event.ApplicationStartingEvent;
-import org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent;
+import org.springframework.boot.web.context.WebServerInitializedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -55,8 +55,8 @@ public class SpringApplicationEventListener {
     }
 
     @EventListener
-    public void handleServletWebServerInitializedEvent(ServletWebServerInitializedEvent event) {
-        LogUtil.logSpringApplicationEvent("ServletWebServerInitializedEvent");
+    public void handleWebServerInitializedEvent(WebServerInitializedEvent event) {
+        LogUtil.logSpringApplicationEvent("WebServerInitializedEvent");
     }
 
     @EventListener

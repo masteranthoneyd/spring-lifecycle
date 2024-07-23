@@ -16,7 +16,7 @@ public class SpringLifecycleApplication {
         ConfigurableApplicationContext context = springApplication.run(args);
         System.out.println("SpringApplication.run finished");
         ((BizService) context.getBean("bizService")).sayHello();
-        context.close();
+//        context.close();
     }
 
 

@@ -4,6 +4,11 @@ spring:
       enabled: true
   application:
     name: spring-lifecycle
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      server-addr: 127.0.0.1:8848
 
 server:
   shutdown: graceful
@@ -17,3 +22,5 @@ lifecycle:
   custom:
     name: Mike
     age: 18
+    block-shutdown: false
+    graceful-deregister-nacos: true
