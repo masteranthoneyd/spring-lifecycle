@@ -1,7 +1,6 @@
 package com.yangbingdong.spring.explore.lifecycle.bean;
 
 import com.yangbingdong.spring.explore.lifecycle.LogUtil;
-import com.yangbingdong.spring.explore.lifecycle.autoconfigure.CustomProperties;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.SneakyThrows;
@@ -15,9 +14,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.scheduling.annotation.Async;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-
 /**
  * @author yangbingdong1994@gmail.com
  */
@@ -29,7 +25,6 @@ public class BizService implements
         DisposableBean{
 
     private ThirdPartAbility thirdPartAbility;
-    private CustomProperties customProperties;
 
     @Async
     public void sayHello() {
@@ -78,10 +73,6 @@ public class BizService implements
     @PreDestroy
     public void preDestroy() {
         LogUtil.log("bean destruction", "@PreDestroy", "@PreDestroy");
-        if (customProperties.isBlockShutdown()) {
-            log.warn("Blocking shutdown...");
-            Thread.sleep(Duration.of(60, ChronoUnit.SECONDS));
-        }
     }
 
     @Override
@@ -93,8 +84,4 @@ public class BizService implements
         LogUtil.log("bean destruction", "@Bean", "destroyMethod");
     }
 
-    @Autowired
-    public void setCustomProperties(CustomProperties customProperties) {
-        this.customProperties = customProperties;
-    }
 }
